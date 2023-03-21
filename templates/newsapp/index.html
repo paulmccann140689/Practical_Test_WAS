@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>School News</title>
+
+        <style>
+body {
+background-color: yellow;
+}
+
+h1 {
+text-align: center;
+
+}
+ul {
+list-style-type: none;
+
+}</style>
+
+    </head>
+
+    <body>
+        <h1>School News</h1>
+
+        <ul>{% if news %}
+                {% for item in news %}
+            <li>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.author }} - {{ item.date }}</p>
+
+                <p>{{ item.text }}</p>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </body>
+</html>
